@@ -21,11 +21,11 @@ class CreateDebitCardTransactionsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('debit_card_id')
-                ->references('id')
-                ->on('debit_cards')
-                ->onUpdate('cascade')
-                ->onDelete('restrict');
+            // $table->foreign('debit_card_id')
+            //     ->references('id')
+            //     ->on('debit_cards')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('restrict');
         });
     }
 

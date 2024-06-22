@@ -22,11 +22,11 @@ class CreateReceivedRepaymentsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('loan_id')
-                ->references('id')
-                ->on('loans')
-                ->onUpdate('cascade')
-                ->onDelete('restrict');
+            // $table->foreign('loan_id')
+            //     ->references('id')
+            //     ->on('loans')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('restrict');
         });
     }
 

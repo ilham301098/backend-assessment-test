@@ -13,6 +13,7 @@ class CreateDebitCardsTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('debit_cards', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id');
@@ -24,12 +25,13 @@ class CreateDebitCardsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onUpdate('cascade')
-                ->onDelete('restrict');
+            // $table->foreign('user_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('restrict');
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
